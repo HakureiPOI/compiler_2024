@@ -1,0 +1,13 @@
+.text
+	li t6, 8		# (MOV, a, 8)
+	li t5, 5		# (MOV, b, 5)
+	li t4, 3		# (MOV, $6, 3)
+	sub t3, t4, t6		# (SUB, $0, $6, a)
+	mv t2, t3		# (MOV, c, $0)
+	mul t1, t6, t5		# (MUL, $1, a, b)
+	addi t0, t5, 3		# (ADD, $2, b, 3)
+	sub t5, t2, t6		# (SUB, $3, c, a)
+	mul t3, t0, t5		# (MUL, $4, $2, $3)
+	sub t5, t1, t3		# (SUB, $5, $1, $4)
+	mv t3, t5		# (MOV, result, $5)
+	mv a0, t3		# (RET, , result)
